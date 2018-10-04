@@ -14,13 +14,13 @@ const setOptionsBG = function(send, reponse) { chrome.extension.sendMessage({ te
 if (tinyIsNavegator.firefox == true) {
     var tinylinkclick = [
         $("<a>", { target: "_blank", href: "https://deviantart.com/jasmindreasond/gallery/60591495/Devious-Folder" }).text("Tutorial"),
-        $("<a>", { target: "_blank", href: "https://github.com/JasminDreasond/DevianPlus" }).text("Github")
+        $("<a>", { target: "_blank", href: "https://github.com/JasminDreasond/Devian-Plus" }).text("Github")
     ];
 } else {
     var tinylinkclick = [
         $("<a>", { target: "_blank", href: "https://deviantart.com/jasmindreasond/gallery/60591495/Devious-Folder" }).text("Tutorial"),
         $("<a>", { target: "_blank", href: "https://chrome.google.com/webstore/detail/super-favbook-plus/nanoagbfpchifchpanhgbhbnmpkhmncm" }).text("Chrome Favourites"),
-        $("<a>", { target: "_blank", href: "https://github.com/JasminDreasond/DevianPlus" }).text("Github")
+        $("<a>", { target: "_blank", href: "https://github.com/JasminDreasond/Devian-Plus" }).text("Github")
     ];
 }
 
