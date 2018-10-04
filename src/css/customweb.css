@@ -1,0 +1,134 @@
+.pluscustommx {
+    bottom: 7px;
+}
+
+#oh-menu-plus-devian {
+    background-color: #46584A;
+}
+
+::selection {
+    background-color: #212c24 !important;
+    color: #FFF !important;
+}
+
+#oh-mainmenu a,
+.tab,
+.oh-menu a {
+    transition: background-color 0.15s !important;
+}
+
+a {
+    transition: color 0.15s;
+}
+
+img[alt^=":icon"] {
+    transition: -webkit-filter 0.10s;
+}
+
+img[alt^=":icon"]:hover {
+    -webkit-filter: brightness(80%)
+}
+
+img[alt^=":icon"]:active {
+    -webkit-filter: brightness(70%);
+}
+
+.thumb img,
+.thumb a .tinythumb {
+    transition: -webkit-filter 0.10s;
+}
+
+.thumb img:active,
+.thumb a .tinythumb:active {
+    -webkit-filter: brightness(70%);
+}
+
+.selectedplusthumbpx {
+    -webkit-filter: brightness(70%) grayscale(50%);
+    color: #595959;
+}
+
+.contextMenuPlugin {
+    background-color: #E1E8DF;
+    border: 1px solid #52695C;
+    outline: 1px solid transparent;
+}
+
+.contextMenuPlugin>li>a {
+    padding: 3px 15px 3px 35px;
+}
+
+.contextMenuPlugin>li>a:hover {
+    background: -webkit-linear-gradient(top, #508EA0, #39798D);
+    outline: 1px solid transparent;
+    border: 1px solid transparent;
+    color: #FFFFEF
+}
+
+.contextMenuPlugin>.gutterLine {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.contextMenuPlugin>li.divider {
+    border-top: 0px dashed #9EB1A2;
+    border-bottom: 0.1px dashed #9EB1A2;
+}
+
+.contextMenuPlugin>.header {
+    background: transparent;
+    text-align: center;
+    color: ButtonText;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#copytextdapkl {
+    background-color: #E1E8DF;
+    border: 1px solid #52695C;
+    outline: 1px solid transparent;
+    width: 400px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10000;
+    text-align: center;
+    padding: 10px 10px 15px 10px;
+}
+
+#copytextdapkl p {
+    font-weight: bold;
+}
+
+#copytextdapkl input[type="text"] {
+    text-align: center;
+    width: 350px;
+}
+
+#copytextdapkl input[type="submit"] {
+    margin: 6px;
+    background: linear-gradient(#DAF087, #B2E140);
+    border: 1px solid #93A98F;
+    color: #333;
+    text-shadow: 0px 1px 1px #E1F3AF;
+    padding: 4px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#copytextdapkl input[type="submit"]:hover {
+    background: linear-gradient(#E6F788, #C0EC30);
+}
+
+#copytextdapkl input[type="submit"]:active {
+    background: linear-gradient(#92C01F, #BBD167);
+}
+
+.send-download-tiny {
+    opacity: 0.7 !important;
+    pointer-events: none !important;
+}

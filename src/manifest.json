@@ -1,0 +1,47 @@
+{
+    "name": "Devian Plus",
+    "short_name": "DP",
+    "description": "New features to your Deviantart",
+    "version": "1.6",
+    "author": "Jasmin Dreasond",
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "background": {
+        "page": "background.html"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "icons/icon.png",
+            "38": "icons/icon_38.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Devian Plus"
+    },
+    "permissions": ["idle", "webRequest", "webRequestBlocking", "background", "notifications", "contextMenus", "storage", "https://sta.sh/*", "https://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "https://*.deviantart.com/*", "https://*.deviantart.net/*", "https://*.deviantart.net/*"],
+
+    "icons": {
+        "128": "icons/icon_128.png",
+        "16": "icons/icon_16.png",
+        "48": "icons/icon_48.png"
+    },
+
+    "content_scripts": [
+
+        {
+            "all_frames": true,
+            "matches": ["https://*.deviantart.com/*", "https://*.deviantart.com/*"],
+            "css": ["css/jquery/jquery.contextmenu.css", "css/customweb.css"],
+            "js": ["js/tinyIsNavegator.js", "js/firefox.js", "js/api/FileSaver.js", "js/jquery/jquery-3.1.0.js", "js/api/location_GET.js", "js/jquery/jquery.contextmenu.js", "js/profile/global.js"],
+            "run_at": "document_start"
+        },
+
+        {
+            "all_frames": true,
+            "matches": ["https://*.deviantart.com/*", "https://*.deviantart.com/*"],
+            "js": ["js/deviantart-page/notification.js", "js/deviantart-page/gallery.js", "js/deviantart-page/art.js"],
+            "run_at": "document_end"
+        }
+
+    ]
+
+}

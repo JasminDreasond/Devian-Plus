@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pop-Up</title>
+    <meta charset="UTF-8" />
+    <script src="js/tinyIsNavegator.js" type="text/javascript"></script>
+    <script src="js/firefox.js" type="text/javascript"></script>
+    <script src="js/jquery/jquery-3.1.0.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="options">
+            <div><a>Options</a></div>
+        </div>
+
+        <div id="menu"><span class="glyphicon glyphicon-refresh" id="loadingicon"></span> <span id="loadingtext">Loading</span></div>
+
+        <div id="objects">
+
+            <div id="notilist">
+                <a id="notifications"><span class="glyphicon glyphicon-bullhorn"></span><span class="number"></span> Notifications </a>
+                <br/>
+                <a id="notices"><span class="glyphicon glyphicon-globe"></span></a>
+                <a id="deviation"><span class="glyphicon glyphicon-picture"></span></a>
+                <a id="watch"><span class="glyphicon glyphicon-eye-open"></span></a>
+                <a id="feedback"><span class="glyphicon glyphicon-comment"></span></a>
+                <a id="correspondence"><span class="glyphicon glyphicon-envelope"></span></a>
+                <a id="groups"><span class="glyphicon glyphicon-home"></span></a>
+                <a id="notes"><span class="glyphicon glyphicon-book"></span></a>
+            </div>
+
+            <div id="linksclick"></div>
+
+            <!-- FORM GLOBAL -->
+            <form id="searchglobal" method="get" action="https://www.deviantart.com/browse/all/" target="_blank">
+
+                Search images
+
+                <br />
+
+                <input type="hidden" name="section" value="" />
+                <input type="hidden" name="global" value="1" />
+                <input type="text" placeholder="Home" name="q" accesskey="s" class="searchgroup" /><input type="submit" value="Search" class="searchgroup" />
+
+            </form>
+
+
+            <div id="searchusername" class="hide">
+
+                Search images in a user profile
+
+                <div class="startsearch">
+                    <input type="text" placeholder="Username" class="searchgroup" /><input type="submit" value="Enable" class="searchgroup" />
+                </div>
+
+                <!-- FORM PROFILE -->
+                <form id="searchuser" method="get" target="_blank">
+
+                    <input type="hidden" name="catpath" value="/" />
+                    <input type="text" name="q" accesskey="s" class="searchgroup" /><input type="submit" value="Search" class="searchgroup" />
+
+                </form>
+
+            </div>
+
+            <center>
+
+                <select id="searchtype">
+                    <option value="global">Global</option>
+                    <option value="profile">User Profile</option>
+                </select>
+
+                <br/><br/>
+
+                <input type="submit" id="downloadall" value="Download Image from all pages" />
+
+            </center>
+
+            <div id="sharelist">
+                Share this extension with your friends
+                <br/>
+                <a id="facebookshare" href="#">Facebook</a>
+                <a id="twittershare" href="#">Twitter</a>
+            </div>
+
+
+
+        </div>
+
+        <div id="optionspage" class="hide">
+
+            <strong>The Options:</strong>
+
+            <br/><br/>
+            <label>Force DA-P Folder Function <input type="checkbox" id="forcedap" /></label>
+
+            <br/>
+            <label>Custom Right-Click <input type="checkbox" id="customrightclick" /></label>
+
+            <br/><br/>
+
+            <label>Notifications Pop-Up <input type="checkbox" id="bgnotifipop" /></label>
+            <br/>
+            <label>Notification Background:  <input type="number" id="bgnotifienabts" max="999" min="10" /> minutes</label>
+            <br/>
+
+        </div>
+
+        <div id="logo">
+            <div class="copyright">DevianPlus made by <a href="https://github.com/JasminDreasond" target="_blank">Jasmin Dreasond</a> &copy;</div>
+        </div>
+
+    </div>
+
+    <script src="js/popup/default.js" type="text/javascript"></script>
+    <script src="js/popup/options.js" type="text/javascript"></script>
+</body>
+
+</html>

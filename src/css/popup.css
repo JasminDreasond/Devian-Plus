@@ -1,0 +1,395 @@
+/* Base */
+
+body {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: #B5C9B1;
+    padding: 0px !important;
+    border-radius: 3px;
+    border: 2px solid #7da178;
+}
+
+#container {
+    margin: 3px;
+    top: 0px !important;
+}
+
+#objects,
+#optionspage {
+    background-color: #D4DFD0;
+    padding: 30px 5px;
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+a {
+    transition: color 0.15s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    border-radius: 3px;
+    border: 1px solid rgba(38, 38, 38, 0.7);
+    padding: 3px;
+}
+
+.clickxs {
+    background-color: #5FAC75;
+    border: 0px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    background: linear-gradient(#DAF087, #B2E140);
+    border: 1px solid #93A98F;
+    border-radius: 3px;
+    padding: 3px 15px;
+    color: #333;
+    text-shadow: 0px 1px 1px #E1F3AF;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(#E6F788, #C0EC30);
+}
+
+input[type="submit"]:active {
+    background: linear-gradient(#92C01F, #BBD167);
+}
+
+
+/* Compartilhar */
+
+#sharelist {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#sharelist a {
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 8pt;
+}
+
+#sharelist a:focus {
+    text-decoration: none;
+}
+
+#facebookshare {
+    background-color: #4267B2;
+}
+
+#twittershare {
+    background-color: #1B95E0;
+}
+
+#facebookshare:hover {
+    background-color: #365899;
+}
+
+#twittershare:hover {
+    background-color: #0C7ABF;
+}
+
+#facebookshare:active {
+    background-color: #29487D;
+}
+
+#twittershare:active {
+    background-color: #0D6AA5;
+}
+
+
+/* Loading */
+
+#loadingicon,
+#loadingtext {
+    color: #AFC0B9;
+}
+
+#loadingicon {
+    font-weight: bold;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loadingicon {
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+/* Logo */
+
+.copyright {
+    font-size: 10pt;
+}
+
+#logo {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    width: 96.4%;
+    background-color: #475C4D;
+    color: #FFF;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+#logo .mark {
+    background-color: transparent;
+    padding: 6px;
+    fill: #05CC47;
+}
+
+#logo .type {
+    fill: #FFF;
+}
+
+#container {
+    margin-bottom: 28px;
+}
+
+#logo .mark svg,
+#logo .type svg,
+.logospecial {
+    padding: 6px 0px;
+    cursor: pointer;
+}
+
+#logo .mark svg,
+#logo .type svg,
+.logospecial {
+    height: 60px;
+}
+
+#logo .mark:active svg,
+#logo .type:active svg,
+.logospecial:active {
+    -webkit-filter: brightness(50%);
+}
+
+
+/* Topo */
+
+#options,
+#menu {
+    border-radius: 3px;
+    background-color: #475C4D;
+    font-size: 10pt;
+    display: block-inline;
+}
+
+.oh-menu-list {
+    padding: 0px;
+    margin: 6px 0px;
+}
+
+
+/* Options Botão */
+
+#options {
+    position: absolute;
+    right: 0px;
+    width: 28%;
+    margin-right: 5px;
+    height: 41px;
+    padding: 10px 15px;
+}
+
+#options div {
+    margin: auto;
+    text-align: center;
+}
+
+#options:hover {
+    background-color: #313836;
+}
+
+#options div .active {
+    font-weight: bold;
+}
+
+
+/* Options Page */
+
+#optionspage {
+    padding: 25px;
+}
+
+#optionspage label {
+    font-weight: normal;
+}
+
+#optionspage label p {
+    font-size: 8pt;
+}
+
+#bgnotifienabts {
+    width: 50px;
+}
+
+
+/* Click Menu */
+
+#menu .oh-touch:hover,
+#options a:hover,
+#logo a:hover {
+    color: #FFF;
+}
+
+#menu a,
+#options a,
+#logo a {
+    color: #AFC0B9;
+    cursor: pointer;
+}
+
+#menu a:first-child:not(.oh-touch) {
+    font-weight: bold;
+}
+
+#menu a:not(.oh-touch) {
+    display: block;
+    padding: 3px 25px;
+}
+
+#menu a:hover:not(.oh-touch) {
+    background-color: #508FA3;
+    color: #FFF;
+}
+
+
+/* Menu */
+
+#menu {
+    padding: 10px 15px;
+    width: 70%;
+    min-height: 41px;
+}
+
+#menu .oh-menuctrl {
+    display: none;
+    transition: background-color 15s;
+}
+
+#menu:hover {
+    background-color: #313836;
+}
+
+#menu .oh-touch {
+    padding: 2px;
+}
+
+#menu:hover .oh-menuctrl {
+    margin: -10px -15px;
+    top: 48px;
+    background-color: #313836;
+    display: block;
+    position: absolute;
+    width: 68.2%;
+    border-radius: 3px;
+    z-index: 5;
+}
+
+#menu hr {
+    margin: 6px 0px;
+    width: 99%;
+    border: 1px inset rgba(82, 96, 93, 0.8);
+}
+
+#menu .username {
+    margin-right: 4px;
+}
+
+
+/* Buscadores */
+
+#searchtype {
+    width: 40%;
+    margin-top: 5px;
+}
+
+#searchuser {
+    display: none;
+}
+
+#searchglobal {
+    text-align: center;
+}
+
+#searchglobal input[type="text"],
+#searchusername input[type="text"] {
+    width: 70%;
+}
+
+.searchgroup[type="text"] {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.searchgroup[type="submit"] {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    min-width: 80px;
+}
+
+#searchusername {
+    text-align: center;
+}
+
+
+/* Notificações */
+
+#notilist {
+    text-align: center;
+    padding: 8px;
+}
+
+#notilist a {
+    margin: 5px;
+    color: #161d1a;
+}
+
+#notilist a:hover {
+    color: #43564e;
+}
+
+.newnotif {
+    color: #339966 !important;
+}
+
+.newnotif:hover {
+    color: #00b300 !important;
+}
+
+
+/* URL */
+
+#linksclick {
+    text-align: center;
+    font-weight: bold;
+}
+
+#linksclick a {
+    margin: 0px 3px;
+}
