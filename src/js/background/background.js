@@ -287,10 +287,7 @@ function backgroundSystem() {
 
         if (message.type == "downloader") {
             chrome.downloads.download({ saveAs: false, conflictAction: "uniquify", url: message.url });
-        }
-
-
-        if (message.text == "changetimerbg") {
+        } else if (message.text == "changetimerbg") {
             sendResponse({ type: "changetimerbg2" })
 
             chrome.storage.sync.get({ bgnotifienabts: 10 }, function(settings) {
@@ -299,7 +296,6 @@ function backgroundSystem() {
             });
 
         }
-
 
     });
 
