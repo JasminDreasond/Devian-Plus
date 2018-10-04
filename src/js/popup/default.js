@@ -120,8 +120,9 @@ $.ajax({ cache: false, url: "https://www.deviantart.com/", dataType: "html" }).d
 
 
 
-chrome.storage.local.get({ lastuser: "", lastoptionsr: "global" }, function(config) {
+chrome.storage.local.get({ lastuser: "", lastoptionsr: "global", globalfiles: false }, function(config) {
     $(".startsearch input[type='text']").val(config.lastuser);
+    $("#confirmoriginalfile").prop("checked", config.globalfiles);
     $("#searchtype").val(config.lastoptionsr).trigger("change");
 });
 
@@ -200,4 +201,8 @@ $("#downloadall").click(function() {
             });
         }
     });
+});
+
+$("#confirmoriginalfile").change(function() {
+    chrome.storage.local.set({ globalfiles: $(this).prop("checked") });
 });

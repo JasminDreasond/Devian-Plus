@@ -59,36 +59,46 @@ tinyFuncs.systempage = function() {
 tinyFuncs.systempage();
 
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+    chrome.storage.local.get({ globalfiles: false }, function(config) {
 
-    if ($('.dev-meta-actions').length > 0) {
-        if (message.action == "downloadAllImages") {
+        if ($('.dev-meta-actions').length > 0) {
+            if (message.action == "downloadAllImages") {
 
-            var foundtinyitem = false;
-            var prepareTrigger;
-            $(".dev-page-container").each(function() {
-                if ($(this).hasClass("minibrowse-container")) {
+                var foundtinyitem = false;
+                var prepareTrigger;
+                $(".dev-page-container").each(function() {
+                    if ($(this).hasClass("minibrowse-container")) {
 
-                    prepareTrigger = $(this).find("#newreplaceDownloadPlus");
-                    if (prepareTrigger.length < 1) {
-                        prepareTrigger = $(this).find("#downloadTinyImage");
+                        if (config.globalfiles) {
+                            prepareTrigger = $(this).find("#newreplaceDownloadPlus");
+                        } else {
+                            prepareTrigger = [];
+                        }
+                        if (prepareTrigger.length < 1) {
+                            prepareTrigger = $(this).find("#downloadTinyImage");
+                        }
+                        foundtinyitem = true;
+
                     }
-                    foundtinyitem = true;
+                });
+
+                if (foundtinyitem == false) {
+
+                    if (config.globalfiles) {
+                        prepareTrigger = $("#output").find("#newreplaceDownloadPlus");
+                    } else {
+                        prepareTrigger = [];
+                    }
+                    if (prepareTrigger.length < 1) {
+                        prepareTrigger = $("#output").find("#downloadTinyImage");
+                    }
 
                 }
-            });
 
-            if (foundtinyitem == false) {
-
-                prepareTrigger = $("#output").find("#newreplaceDownloadPlus");
-                if (prepareTrigger.length < 1) {
-                    prepareTrigger = $("#output").find("#downloadTinyImage");
-                }
+                prepareTrigger.trigger("click");
 
             }
-
-            prepareTrigger.trigger("click");
-
         }
-    }
 
+    });
 });
