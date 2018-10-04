@@ -31,7 +31,8 @@ const tinyFuncs = {
                 var contentType = xhr.getResponseHeader("Content-Type");
                 if ((typeof contentType == "string") && (contentType)) {
 
-                    saveAs(xhr.response, tinyurl.toString().match(/.*\/(.+?)\./)[1] + '.' + contentType.substring(6, contentType.length));
+                    var filename = removeParamenters(tinyurl);
+                    saveAs(xhr.response, filename.split("/")[filename.split("/").length - 1]);
                     if (typeof callback == "function") { callback(); }
 
                 }
@@ -242,7 +243,7 @@ const tinyFuncs = {
             var tinyitems = {
 
                 artistName: $('.dev-title-container .username').text(),
-                imageTitle: $(".dev-title-container h1 a[href*='/art/']").text(),
+                imageTitle: $(".dev-title-container h1 a[href*='/art/']").text()
 
             };
 
@@ -251,39 +252,32 @@ const tinyFuncs = {
             $(".dev-page-container").each(function() {
                 if ($(this).hasClass("minibrowse-container")) {
 
+                    tinyitems.srcButton = $(this).find('.dev-page-download');
                     tinyitems.imgFull = $(this).find(".dev-content-full");
-
-                    $(this).find(".dev-view-deviation").find("img").each(function() {
-                        imagelist.push({
-                            label: $(this).attr("width") + ' × ' + $(this).attr("height"),
-                            icon: "",
-                            data: $(this).attr("src"),
-                            action: function(e, tinythis) {
-                                $($(tinythis).data("contextMenuPlugin-main")).addClass("send-download-tiny");
-                                tinyFuncs.downloadImage($(tinythis).data("contextMenuPlugin-main"), $(tinythis).data("contextMenuPlugin-data"));
-                            }
-                        });
-                    });
+                    tinyitems.base = $(this).find(".dev-view-deviation");
 
                 }
             });
 
             if (typeof tinyitems.imgFull == "undefined") {
 
+                tinyitems.srcButton = $('#output .dev-page-download');
                 tinyitems.imgFull = $('#output .dev-content-full');
-                $("#output").find(".dev-view-deviation").find("img").each(function() {
-                    imagelist.push({
-                        label: $(this).attr("width") + ' × ' + $(this).attr("height"),
-                        icon: "",
-                        data: $(this).attr("src"),
-                        action: function(e, tinythis) {
-                            $($(tinythis).data("contextMenuPlugin-main")).addClass("send-download-tiny");
-                            tinyFuncs.downloadImage($(tinythis).data("contextMenuPlugin-main"), $(tinythis).data("contextMenuPlugin-data"));
-                        }
-                    });
-                });
+                tinyitems.base = $("#output").find(".dev-view-deviation");
 
             }
+
+            tinyitems.base.find("img").each(function() {
+                imagelist.push({
+                    label: $(this).attr("width") + ' × ' + $(this).attr("height"),
+                    icon: "",
+                    data: $(this).attr("src"),
+                    action: function(e, tinythis) {
+                        $($(tinythis).data("contextMenuPlugin-main")).addClass("send-download-tiny");
+                        tinyFuncs.downloadImage($(tinythis).data("contextMenuPlugin-main"), $(tinythis).data("contextMenuPlugin-data"));
+                    }
+                });
+            });
 
 
 
@@ -306,6 +300,20 @@ const tinyFuncs = {
                     items: imagelist
                 })
             );
+
+            if (typeof tinyitems.srcButton != "undefined") {
+
+                var newclone = tinyitems.srcButton.clone().attr("id", "newreplaceDownloadPlus").click(function() {
+
+                    $(this).addClass("send-download-tiny");
+                    tinyFuncs.downloadImage(this, $(this).attr("href"));
+                    return false;
+
+                });
+
+                tinyitems.srcButton.replaceWith(newclone);
+
+            }
 
         }
 

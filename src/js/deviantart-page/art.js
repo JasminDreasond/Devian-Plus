@@ -64,16 +64,29 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
         if (message.action == "downloadAllImages") {
 
             var foundtinyitem = false;
+            var prepareTrigger;
             $(".dev-page-container").each(function() {
                 if ($(this).hasClass("minibrowse-container")) {
-                    $(this).find("#downloadTinyImage").trigger("click");
+
+                    prepareTrigger = $(this).find("#newreplaceDownloadPlus");
+                    if (prepareTrigger.length < 1) {
+                        prepareTrigger = $(this).find("#downloadTinyImage");
+                    }
                     foundtinyitem = true;
+
                 }
             });
 
             if (foundtinyitem == false) {
-                $("#output").find("#downloadTinyImage").trigger("click");
+
+                prepareTrigger = $("#output").find("#newreplaceDownloadPlus");
+                if (prepareTrigger.length < 1) {
+                    prepareTrigger = $("#output").find("#downloadTinyImage");
+                }
+
             }
+
+            prepareTrigger.trigger("click");
 
         }
     }
