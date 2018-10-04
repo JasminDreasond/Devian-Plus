@@ -273,8 +273,9 @@ const tinyFuncs = {
                     icon: "",
                     data: $(this).attr("src"),
                     action: function(e, tinythis) {
-                        $($(tinythis).data("contextMenuPlugin-main")).addClass("send-download-tiny");
-                        tinyFuncs.downloadImage($(tinythis).data("contextMenuPlugin-main"), $(tinythis).data("contextMenuPlugin-data"));
+                        //$($(tinythis).data("contextMenuPlugin-main")).addClass("send-download-tiny");
+                        chrome.extension.sendMessage({ type: "downloader", url: $(tinythis).data("contextMenuPlugin-data") }, function() {});
+                        //tinyFuncs.downloadImage($(tinythis).data("contextMenuPlugin-main"), $(tinythis).data("contextMenuPlugin-data"));
                     }
                 });
             });
@@ -291,8 +292,9 @@ const tinyFuncs = {
                     $("<span>", { class: "text" }).text(tinyitems.imgFull.attr("src").split('.').pop().toUpperCase() + " " + tinyitems.imgFull.attr("width") + ' × ' + tinyitems.imgFull.attr("height"))
                 ).click(function() {
 
-                    $(this).addClass("send-download-tiny");
-                    tinyFuncs.downloadImage(this, $(this).attr("href"));
+                    //$(this).addClass("send-download-tiny");
+                    //tinyFuncs.downloadImage(this, $(this).attr("href"));
+                    chrome.extension.sendMessage({ type: "downloader", url: $(this).attr("href") }, function() {});
                     return false;
 
                 }).contextPopup({
@@ -305,8 +307,9 @@ const tinyFuncs = {
 
                 var newclone = tinyitems.srcButton.clone().attr("id", "newreplaceDownloadPlus").click(function() {
 
-                    $(this).addClass("send-download-tiny");
-                    tinyFuncs.downloadImage(this, $(this).attr("href"));
+                    //$(this).addClass("send-download-tiny");
+                    //tinyFuncs.downloadImage(this, $(this).attr("href"));
+                    chrome.extension.sendMessage({ type: "downloader", url: $(this).attr("href") }, function() {});
                     return false;
 
                 });

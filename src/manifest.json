@@ -17,7 +17,7 @@
         "default_popup": "popup.html",
         "default_title": "Devian Plus"
     },
-    "permissions": ["idle", "webRequest", "webRequestBlocking", "background", "notifications", "contextMenus", "storage", "https://sta.sh/*", "https://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "https://*.deviantart.com/*", "https://*.deviantart.net/*", "https://*.deviantart.net/*"],
+    "permissions": ["downloads", "idle", "webRequest", "webRequestBlocking", "background", "notifications", "contextMenus", "storage", "https://sta.sh/*", "https://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "https://*.deviantart.com/*", "https://*.deviantart.net/*", "https://*.deviantart.net/*"],
 
     "icons": {
         "128": "icons/icon_128.png",

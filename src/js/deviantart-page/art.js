@@ -95,7 +95,8 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
                 }
 
-                prepareTrigger.trigger("click");
+                //prepareTrigger.trigger("click");
+                chrome.extension.sendMessage({ type: "downloader", url: prepareTrigger.attr("href") }, function() {});
 
             }
         }

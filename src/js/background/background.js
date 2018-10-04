@@ -284,6 +284,12 @@ function backgroundSystem() {
     });
 
     chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+
+        if (message.type == "downloader") {
+            chrome.downloads.download({ saveAs: false, conflictAction: "uniquify", url: message.url });
+        }
+
+
         if (message.text == "changetimerbg") {
             sendResponse({ type: "changetimerbg2" })
 
@@ -293,6 +299,8 @@ function backgroundSystem() {
             });
 
         }
+
+
     });
 
     tinyBase.updater();

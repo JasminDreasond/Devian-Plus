@@ -196,9 +196,7 @@ $("#twittershare").click(function() {
 $("#downloadall").click(function() {
     chrome.tabs.query({}, function(tabs) {
         for (var i = 0; i < tabs.length; i++) {
-            chrome.tabs.sendMessage(tabs[i].id, { action: "downloadAllImages" }, function(response) {
-                console.log(response.farewell);
-            });
+            chrome.tabs.sendMessage(tabs[i].id, { action: "downloadAllImages" }, function() {});
         }
     });
 });
